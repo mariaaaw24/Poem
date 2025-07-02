@@ -2,16 +2,31 @@
 {
     "id": "june1",
     "image": "assets/new.png",
-    "date": "2025-06-30"
+    "date": "2025-06-30",
+    "title": "June is a teenager"
 },
 {
     "id": "june2",
     "image": "assets/poem.jpg",
-    "date": "2025-06-29"
+    "date": "2025-06-29",
+    "title": "How can i fix the sun?"
 },
 {
     "id": "june3",
     "image": "assets/june3.jpg",
-    "date": "2025-06-29"
+    "date": "2025-06-29",
+    "title": "When you're 19"
+},
+{
+    "id": "june4",
+    "image": "assets/june4.jpg",
+    "date": "2025-06-29",
+    "title": "You"
+},
+{
+    "id": "june5",
+    "image": "assets/june5.jpg",
+    "date": "2025-06-29",
+    "title": "Grave of the fireflies"
 }
 ]

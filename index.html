@@ -5,25 +5,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ithinkkthoughts</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: linear-gradient(to bottom right, #f7f4fa, #ece7f6);
+    }
+
+    .poem-card {
+      break-inside: avoid;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .poem-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 24px rgba(168, 136, 245, 0.2);
+    }
+  </style>
 </head>
-<body class="bg-[#f7f4fa] text-gray-800 font-sans">
-  <header class="text-center p-8">
-    <h1 class="text-4xl font-bold text-purple-600">ithinkkthoughts</h1>
-    <p class="text-lg text-purple-400">poems, pixels, pastels</p>
+<body class="text-gray-800">
+
+  <!-- Header -->
+  <header class="text-center py-10">
+    <h1 class="text-5xl font-bold text-purple-600">ithinkkthoughts</h1>
+    <p class="text-xl text-purple-400 mt-2 italic">poems, pixels & pastels</p>
     <nav class="mt-4">
-      <a href="index.html" class="text-purple-600 underline mx-2">Home</a>
-      <a href="about.html" class="text-purple-600 underline mx-2">About Me</a>
+      <a href="index.html" class="text-purple-500 underline mx-3">Home</a>
+      <a href="about.html" class="text-purple-500 underline mx-3">About Me</a>
     </nav>
   </header>
 
-  <main id="poem-container" class="grid grid-cols-1 md:grid-cols-2 gap-6 px-6 pb-10">
-    <!-- Cards load here -->
+  <!-- Masonry Grid -->
+  <main id="poem-container" class="columns-1 sm:columns-2 lg:columns-3 gap-6 px-6 pb-20 max-w-7xl mx-auto">
+    <!-- Poem cards load here -->
   </main>
 
-  <footer class="text-center py-6 text-sm text-gray-500">
-    © 2025 Ree
+  <!-- Footer -->
+  <footer class="text-center py-10 text-sm text-gray-500">
+    © 2025 Ree — dreamt, designed, developed.
   </footer>
 
+  <!-- Dynamic Poem Cards -->
   <script>
     fetch("poems.json")
       .then(res => res.json())
@@ -31,11 +54,14 @@
         const container = document.getElementById("poem-container");
         poems.forEach(poem => {
           const card = document.createElement("div");
-          card.className = "bg-white rounded-xl shadow-lg overflow-hidden";
+          card.className = "poem-card bg-white rounded-xl mb-6 overflow-hidden shadow-lg";
 
           card.innerHTML = `
             <a href="poem.html?id=${poem.id}">
-              <img src="${poem.image}" alt="${poem.title}" class="w-full h-auto object-contain" />
+              <img src="${poem.image}" alt="${poem.title}" class="w-full object-cover" />
+              <div class="p-4">
+                <h3 class="text-lg font-semibold text-purple-600">${poem.title}</h3>
+              </div>
             </a>
           `;
 
